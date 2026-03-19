@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    /* === Path Mapping (✅ Added for ISRO1 import support) === */
+    "baseUrl": "./src",
+    "paths": {
+      "*": ["*", "src/*"]
+    },
+
+    /* === File & Environment Settings === */
+    "target": "esnext",
+    "module": "esnext",
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+
+    /* === Output Options === */
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    /* === Type Checking Options === */
+    "strict": true,
+    "isolatedModules": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    /* === Modern Settings === */
+    "moduleDetection": "force",
+    "verbatimModuleSyntax": false,
+
+    /* === Include DOM for browser projects === */
+    "lib": ["dom", "esnext"]
+  },
+
+  /* 👇 This was missing — add ISRO1 folder explicitly */
+  "include": ["src", "src/ISRO1"],
+
+  "exclude": ["node_modules", "dist"]
+}
