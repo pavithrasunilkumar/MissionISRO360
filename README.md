@@ -100,10 +100,6 @@ User Interface
 
 ---
 
-## Project Structure
-
-
-
 ## Screenshots
 
 ### Homepage
