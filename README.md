@@ -1,5 +1,16 @@
 # 🚀 MISSION ISRO 360
 
+![React](https://img.shields.io/badge/Frontend-React-blue)
+![Node.js](https://img.shields.io/badge/Backend-Node.js-green)
+![Python](https://img.shields.io/badge/Python-Data%20Processing-yellow)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-purple)
+![NumPy](https://img.shields.io/badge/NumPy-Numerical-blue)
+![Visualization](https://img.shields.io/badge/Visualization-Matplotlib%20%7C%20Seaborn-orange)
+![ML](https://img.shields.io/badge/Machine%20Learning-Enabled-red)
+![Domain](https://img.shields.io/badge/Domain-Space%20Analytics-critical)
+![Status](https://img.shields.io/badge/Status-Active-success)
+![License](https://img.shields.io/badge/License-MIT-brightgreen)
+
 ### A 360° Data Intelligence Platform for ISRO & Global Space Ecosystem
 
 
