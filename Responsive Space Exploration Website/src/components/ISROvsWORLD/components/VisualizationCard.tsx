@@ -5,9 +5,11 @@ import { BarChart3 } from 'lucide-react';
 interface VisualizationCardProps {
   title: string;
   index: number;
+  type?: 'image' | 'iframe';
+  src?: string;
 }
 
-export function VisualizationCard({ title, index }: VisualizationCardProps) {
+export function VisualizationCard({ title, index, type, src }: VisualizationCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -26,34 +28,56 @@ export function VisualizationCard({ title, index }: VisualizationCardProps) {
             <h3 className="text-white">{title}</h3>
           </div>
 
-          {/* Graph Placeholder */}
+          {/* Graph */}
           <div className="relative aspect-video bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-lg border border-cyan-500/20 flex items-center justify-center mb-6 overflow-hidden group-hover:border-cyan-400/40 transition-all">
-            {/* Animated Grid */}
-            <div className="absolute inset-0 opacity-20">
-              <div className="h-full w-full" style={{
-                backgroundImage: `
-                  linear-gradient(to right, rgba(6, 182, 212, 0.1) 1px, transparent 1px),
-                  linear-gradient(to bottom, rgba(6, 182, 212, 0.1) 1px, transparent 1px)
-                `,
-                backgroundSize: '40px 40px'
-              }}></div>
-            </div>
+            {src && type === 'image' && (
+              <img
+                src={src}
+                alt={title}
+                className="relative z-10 w-full h-full object-contain bg-black/40"
+                loading="lazy"
+              />
+            )}
 
-            {/* Glow Effect */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/5 to-blue-500/5"></div>
+            {src && type === 'iframe' && (
+              <iframe
+                src={src}
+                title={title}
+                className="relative z-10 w-full h-full border-0 bg-white"
+                loading="lazy"
+              />
+            )}
 
-            {/* Content */}
-            <div className="relative text-center z-10 p-8">
-              <div className="relative inline-block mb-4">
-                <BarChart3 className="w-16 h-16 text-cyan-400/60" />
-                <div className="absolute inset-0 blur-xl bg-cyan-400/30"></div>
-              </div>
-              <p className="text-cyan-400/80 text-sm">Insert Interactive Graph Here</p>
-            </div>
+            {!src && (
+              <>
+                {/* Animated Grid */}
+                <div className="absolute inset-0 opacity-20">
+                  <div className="h-full w-full" style={{
+                    backgroundImage: `
+                      linear-gradient(to right, rgba(6, 182, 212, 0.1) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(6, 182, 212, 0.1) 1px, transparent 1px)
+                    `,
+                    backgroundSize: '40px 40px'
+                  }}></div>
+                </div>
+
+                {/* Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/5 to-blue-500/5"></div>
+
+                {/* Content */}
+                <div className="relative text-center z-10 p-8">
+                  <div className="relative inline-block mb-4">
+                    <BarChart3 className="w-16 h-16 text-cyan-400/60" />
+                    <div className="absolute inset-0 blur-xl bg-cyan-400/30"></div>
+                  </div>
+                  <p className="text-cyan-400/80 text-sm">Insert Interactive Graph Here</p>
+                </div>
+              </>
+            )}
 
             {/* Corner Accents */}
-            <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-cyan-500/40"></div>
-            <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-cyan-500/40"></div>
+            <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-cyan-500/40 pointer-events-none"></div>
+            <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-cyan-500/40 pointer-events-none"></div>
           </div>
 
           {/* Insights Section */}
