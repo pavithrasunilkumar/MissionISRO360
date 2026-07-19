@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
-import { Github, Linkedin, FileText, Rocket } from "lucide-react";
+import { Github, Linkedin, Mail, Rocket } from "lucide-react";
 
 export function Footer() {
   return (
@@ -42,7 +42,7 @@ export function Footer() {
             <h3 className="text-white font-['Poppins']">Connect</h3>
             <div className="flex gap-4">
               <motion.a
-                href="https://github.com"
+                href="https://github.com/pavithrasunilkumar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-gradient-to-br from-slate-800 to-purple-900/50 border border-purple-500/30 flex items-center justify-center text-gray-300 hover:text-white hover:border-purple-400/50 transition-all"
@@ -52,7 +52,7 @@ export function Footer() {
                 <Github className="w-5 h-5" />
               </motion.a>
               <motion.a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/pavithra-sunilkumar68/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-gradient-to-br from-slate-800 to-purple-900/50 border border-purple-500/30 flex items-center justify-center text-gray-300 hover:text-white hover:border-purple-400/50 transition-all"
@@ -62,14 +62,12 @@ export function Footer() {
                 <Linkedin className="w-5 h-5" />
               </motion.a>
               <motion.a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:pavithrasunilk68@gmail.com"
                 className="w-10 h-10 rounded-full bg-gradient-to-br from-slate-800 to-purple-900/50 border border-purple-500/30 flex items-center justify-center text-gray-300 hover:text-white hover:border-purple-400/50 transition-all"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <FileText className="w-5 h-5" />
+                <Mail className="w-5 h-5" />
               </motion.a>
             </div>
           </div>
