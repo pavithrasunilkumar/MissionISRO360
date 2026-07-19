@@ -4,6 +4,7 @@ import { HeroSection } from "./components/HeroSection";
 import { VisualizationSection } from "./components/VisualizationSection";
 import { AnalyticsSection } from "./components/AnalyticsSection";
 import { Footer } from "./components/Footer";
+import { RocketCursor } from "../RocketCursor";
 
 import "./index.css";
 
@@ -25,6 +26,7 @@ export default function App() {
       className="min-h-screen bg-black text-white relative overflow-hidden"
     >
       {/* Page Content */}
+      <RocketCursor />
       <Header />
       <main>
         <HeroSection />
