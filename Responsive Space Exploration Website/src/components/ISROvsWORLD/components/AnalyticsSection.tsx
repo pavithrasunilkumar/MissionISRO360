@@ -349,22 +349,14 @@ export function AnalyticsSection() {
                     <h3 className="text-white">SHAP Feature Importance Analysis</h3>
                   </div>
 
-                  {/* SHAP Graph Placeholder */}
+                  {/* SHAP Graph */}
                   <div className="relative mb-6 rounded-xl overflow-hidden bg-black/40 border border-cyan-500/30 min-h-[400px] flex items-center justify-center group-hover:border-cyan-400/50 transition-colors duration-300">
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-purple-500/10"></div>
-                    <div className="relative z-10 text-center p-8">
-                      <Brain className="w-20 h-20 text-cyan-400/40 mx-auto mb-4" />
-                      <p className="text-cyan-400/60 mb-2">Insert SHAP Explanation Graph Here</p>
-                      <p className="text-gray-500 text-sm">Feature importance waterfall plot or summary plot</p>
-                    </div>
-                    
-                    {/* Grid overlay */}
-                    <div className="absolute inset-0 opacity-20 pointer-events-none">
-                      <div className="w-full h-full" style={{
-                        backgroundImage: 'linear-gradient(to right, rgba(6, 182, 212, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(6, 182, 212, 0.1) 1px, transparent 1px)',
-                        backgroundSize: '40px 40px'
-                      }}></div>
-                    </div>
+                    <img
+                      src="/shap/shap.png"
+                      alt="SHAP feature importance plot"
+                      className="relative z-10 w-full h-full max-h-[500px] object-contain bg-white"
+                      loading="lazy"
+                    />
                   </div>
 
                   {/* Insights */}
