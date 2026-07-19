@@ -46,18 +46,18 @@ export default function App() {
   };
 
   const visualizations = [
-    'Mission Success Rate Comparison',
-    'Funding vs Launch Count',
-    'Launch Vehicles Efficiency',
-    'Satellite Deployment Timeline',
-    'Cost per Kilogram to Orbit',
-    'Annual Launch Frequency Trends',
-    'Technology Development Index',
-    'International Collaboration Network',
-    'Payload Capacity Analysis',
-    'Mission Type Distribution',
-    'Geographic Launch Coverage',
-    'Innovation & Patents Filed',
+    { title: 'Mission Success Rate Comparison', type: 'iframe' as const, src: '/graph1/bubble_missions_vs_success.html' },
+    { title: 'Funding vs Launch Count', type: 'image' as const, src: '/graphs/graph1.png' },
+    { title: 'Launch Vehicles Efficiency', type: 'image' as const, src: '/graphs/graph2.png' },
+    { title: 'Satellite Deployment Timeline', type: 'image' as const, src: '/graphs/graph3.png' },
+    { title: 'Cost per Kilogram to Orbit', type: 'image' as const, src: '/graphs/graph4.png' },
+    { title: 'Annual Launch Frequency Trends', type: 'image' as const, src: '/graphs/graph5.png' },
+    { title: 'Technology Development Index', type: 'image' as const, src: '/graphs/graph6.png' },
+    { title: 'International Collaboration Network', type: 'iframe' as const, src: '/graph1/treemap_country_company.html' },
+    { title: 'Payload Capacity Analysis', type: 'image' as const, src: '/graphs/graph7.png' },
+    { title: 'Mission Type Distribution', type: 'image' as const, src: '/graph1/2.png' },
+    { title: 'Geographic Launch Coverage', type: 'iframe' as const, src: '/graph1/choropleth_missions_by_country.html' },
+    { title: 'Innovation & Patents Filed', type: 'image' as const, src: '/graph1/3.png' },
   ];
 
   return (
@@ -223,8 +223,14 @@ export default function App() {
 
           {/* Visualization Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
-            {visualizations.map((title, index) => (
-              <VisualizationCard key={index} title={title} index={index} />
+            {visualizations.map((viz, index) => (
+              <VisualizationCard
+                key={index}
+                title={viz.title}
+                index={index}
+                type={viz.type}
+                src={viz.src}
+              />
             ))}
           </div>
         </div>
