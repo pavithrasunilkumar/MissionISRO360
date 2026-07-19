@@ -1,6 +1,7 @@
 // src/App.tsx
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { AnimatePresence } from "motion/react";
 import { Navigation } from "./components/Navigation";
 import { HeroSection } from "./components/HeroSection";
 import { OverviewSection } from "./components/OverviewSection";
@@ -8,6 +9,7 @@ import { Footer } from "./components/Footer";
 import { RocketCursor } from "./components/RocketCursor";
 import { IsroPage } from "./components/IsroPage";
 import { IsroVsWorldPage } from "./components/IsroVsWorldPage"; // ✅ Your actual page component
+import { SplashScreen } from "./components/SplashScreen";
 
 // ✅ Cursor controller (same logic)
 function CursorController() {
@@ -50,9 +52,17 @@ function Home() {
 }
 
 export default function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
   return (
     <Router>
       <CursorController />
+
+      <AnimatePresence>
+        {showSplash && (
+          <SplashScreen onFinish={() => setShowSplash(false)} duration={3500} />
+        )}
+      </AnimatePresence>
 
       <Routes>
         {/* 🏠 Home */}
